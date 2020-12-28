@@ -15,7 +15,6 @@ const App: React.FC = () => {
 
   const toggleTheme = (): void => {
     setTheme(theme.title === 'light' ? dark : light);
-    console.log(theme);
   };
 
   return (
