@@ -59,6 +59,7 @@ const Dashboard: React.FC = () => {
         }
       }
       setNewRepo('');
+      setInputError('');
       return;
     }
 
