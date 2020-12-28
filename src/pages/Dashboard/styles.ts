@@ -5,9 +5,16 @@ interface FormProps {
   hasError: boolean;
 }
 
+export const Header = styled.div`
+  display: flex;
+  max-width: 700px;
+  align-items: center;
+  justify-content: space-between;
+`;
+
 export const Title = styled.h1`
   font-size: 48px;
-  color: #3a3a3a;
+  color: ${props => props.theme.colors.mainText};
   max-width: 450px;
   line-height: 56px;
 
@@ -67,7 +74,7 @@ export const Repositories = styled.div`
   max-width: 700px;
 
   a {
-    background: #fff;
+    background: ${props => props.theme.colors.dashboardRepositoryBackground};
     border-radius: 5px;
     width: 100%;
     padding: 24px;
@@ -98,19 +105,19 @@ export const Repositories = styled.div`
 
       strong {
         font-size: 20px;
-        color: #3d3d4d;
+        color: ${props => props.theme.colors.defaultRepositoryTitle};
       }
 
       p {
         font-size: 18px;
-        color: #a8a8b3;
+        color: ${props => props.theme.colors.dashboardRepositoryDescription};
         margin-top: 4px;
       }
     }
 
     svg {
       margin-left: auto;
-      color: #cbcbd6;
+      color: ${props => props.theme.colors.chevronColor};
     }
   }
 `;
