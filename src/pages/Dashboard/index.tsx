@@ -48,6 +48,20 @@ const Dashboard: React.FC = () => {
       return;
     }
 
+    const currentRepositories = JSON.stringify(repositories);
+
+    if (currentRepositories.includes(newRepo)) {
+      for (let i = 0; i < repositories.length; i += 1) {
+        if (repositories[i].full_name === newRepo) {
+          const sortedArray = repositories.splice(i, 1);
+          repositories.unshift(sortedArray[0]);
+          break;
+        }
+      }
+      setNewRepo('');
+      return;
+    }
+
     try {
       const response = await api.get(`repos/${newRepo}`);
 
